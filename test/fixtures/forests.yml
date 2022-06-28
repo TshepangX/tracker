@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  North_West_region: MyString
+  South_West_region: MyString
+  North_East_region: MyString
+  South_East_region: MyString
+
+two:
+  North_West_region: MyString
+  South_West_region: MyString
+  North_East_region: MyString
+  South_East_region: MyString

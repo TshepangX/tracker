@@ -1,0 +1,33 @@
+    <h3><%= link_to "Home", root_path(@animals) %></h3>
+
+    <h1>Sightings</h1>
+
+        <%= form_with method: :get do |form| %>
+
+    <div>
+        <%= form.label :search %>
+        <%= form.date_field :start_date, value: params[:start_date] %>
+    </div>
+
+    <div>
+        <%= form.label :search %>
+        <%= form.date_field :end_date, value: params[:end_date] %>
+    </div>
+
+    <div>
+        <%= form.label :region %>
+        <%= form.select :region_id, Region.pluck(:title, :id) %>
+    </div>
+    
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>
+
+    <ul>
+        <% @sightings.each do |sighting| %>
+            <li>
+                <%= link_to sighting.animal.name, sighting %>
+            </li> 
+        <% end %>
+    </ul>

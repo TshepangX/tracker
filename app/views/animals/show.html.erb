@@ -1,0 +1,11 @@
+<h3><%= link_to "Home", root_path(@animals) %></h3>
+
+<h1><%= @animal.name %></h1><br>
+ <h3><%= "#{time_ago_in_words @animal.created_at} ago" %></h3>
+
+    <ul>
+        <li><%= link_to "Edit Animal", edit_animal_path(@animal) %></li>
+        <li><%= link_to "Remove Animal", animal_path(@animal), 
+                method: :delete,
+                data:{ confirm: "Do you want to continue?" }%></li>    
+    </ul>

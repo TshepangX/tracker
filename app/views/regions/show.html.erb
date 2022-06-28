@@ -1,0 +1,18 @@
+<h3><%= link_to "Home", root_path(@animals) %></h3>
+
+<h1><%= @region.title %></h1>
+        <h5><%= "#{time_ago_in_words @region.created_at} ago" %></h5>
+           
+    <h3><%= "Animals in this region" %></h3>
+    <ul>
+        <% @region.sightings.each do |sighting| %>
+            <li>
+                <%= sighting.animal.name %>
+            </li>
+        <% end %>
+    </ul>
+
+<ul>
+    <li><%= link_to "Edit Region", edit_region_path(@region) %></li>
+    <li><%= link_to "Remove Region", region_path(@region), method: :delete, data:{ confirm: "Do you want to continue?" }%></li>    
+</ul>

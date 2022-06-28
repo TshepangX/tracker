@@ -1,0 +1,22 @@
+<h3><%= link_to "Home", root_path(@animals) %></h3>
+
+<h1> Sighting </h1><br>
+    <h4> Animal </h4>
+        <%= @sighting.animal.name %>
+
+    <h4> Region </h4>
+        <%= @sighting.region.title %>
+
+    <h4>Latitude</h4>
+        <%= @sighting.latitude%>
+        
+    <h4>Longitude</h4>
+        <%= @sighting.longitude %>
+ <h3><%= "#{time_ago_in_words @sighting.created_at} ago" %></h3>
+
+<ul>
+    <li><%= link_to "Edit Sighting", edit_sighting_path(@sighting) %></li>
+    <li><%= link_to "Remove Sighting", sighting_path(@sighting),
+              method: :delete,
+            data:{ confirm: "Do you want to continue?" }%></li>    
+</ul>

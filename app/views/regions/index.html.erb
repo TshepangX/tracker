@@ -1,0 +1,11 @@
+<h3><%= link_to "Home", root_path(@animals) %></h3>
+
+<h1>Regions</h1>
+
+<ul>
+    <% @regions.each do |region| %>
+        <li>
+            <%= link_to region.title, region%>
+        </li>
+    <% end %>
+</ul>    

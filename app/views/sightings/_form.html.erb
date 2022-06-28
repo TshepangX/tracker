@@ -1,0 +1,17 @@
+<%= form_with model: @sighting do |form| %>
+<div>
+
+        <%= form.label :animal_id %>
+        <%= form.select :animal_id, Animal.pluck(:name, :id) %><br>
+        <%= form.label :region_id %>
+        <%= form.select :region_id, Region.pluck(:title, :id) %><br>
+        <%= form.label :latitude %>
+        <%= form.number_field :latitude %><br>
+        <%= form.label :longitude %>
+        <%= form.number_field :longitude %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>
